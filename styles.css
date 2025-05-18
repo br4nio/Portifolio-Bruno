@@ -116,6 +116,7 @@ body {
 
 /* Sobre mim */
 .sobre-mim {
+    margin: 100px auto 0 auto;
     max-width: 800px;
     margin: 50px auto 50px auto;
     margin-bottom: 100px;
@@ -242,14 +243,15 @@ body {
 /* Projetos */
 .projetos {
     background-color: #04070f;
-    margin: 100px auto 0 auto;
+    margin: 100px auto 0 auto; /* auto nas laterais centraliza */
+    width: 500px;
     margin-bottom: px;
     padding: 2px 20px;
     min-height: 0px;
+    justify-content: center;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     transition: box-shadow 0.3s ease;
-    width: 500px;   
     height: 500px;
 }
 
@@ -369,4 +371,83 @@ body {
 .aparecer.visivel {
     opacity: 1;
     transform: translateY(0);
+}
+/* --- Responsividade --- */
+@media (max-width: 500px) {
+    
+    /* Seção início - reduzir tamanho do título e da imagem */
+    .inicio h1 {
+        font-size: 28px;
+    }
+    .bruno-img {
+        width: 130px;
+        margin-bottom: 30px;
+    }
+
+    /* Sobre mim - reduzir largura e padding, empilhar */
+    .sobre-mim {
+        max-width: 90%;
+        margin: 50px auto 50px auto;
+        padding: 15px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    /* Lista de tecnologias */
+    .lista-tec {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    /* Seção idiomas - ajustar padding e largura */
+    .section-idiomas {
+        max-width: 90%;
+        padding: 20px 15px;
+    }
+    .section-idiomas h2 {
+        font-size: 1.5rem;
+    }
+    .idioma-nome {
+        font-size: 1rem;
+    }
+    .barra-proficiencia {
+        height: 10px;
+    }
+
+    /* Projetos - largura total e altura automática */
+    .projetos {
+        width: 95%;
+        height: auto;
+        margin: 50px auto 50px auto;
+        padding: 15px 10px;
+    }
+    .projetos h2 {
+        line-height: 2.2;
+        font-size: 1.4rem;
+        padding: 8px;
+    }
+    .btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Contato - largura total, menos padding e ajuste no bottom */
+    .contato {
+        max-width: 95%;
+        padding: 30px 15px;
+        bottom: -100px;
+    }
+    .contato h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .contato a {
+        font-size: 24px;
+        margin: 0 10px 40px 10px;
+    }
+    .btn-cv {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
 }
