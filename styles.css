@@ -1,15 +1,11 @@
+/* Reset e global */
 * {
     margin: 0;
     padding: 0;
+    user-select: none;
+    -webkit-user-drag: none;
     color: aliceblue;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
-}
-
-
-html {
-    scroll-behavior: smooth;
-
 }
 
 :root {
@@ -21,120 +17,319 @@ html {
     --vidro: rgba(255, 255, 255, 0.1);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body e animação de fundo */
 body {
     background-color: var(--escuro);
     color: var(--claro);
+    overflow-x: hidden;
+    background: linear-gradient(270deg, rgb(0, 0, 78), rgb(26, 0, 44));
+    background-size: 1400% 1400%;
+    animation: arcoIris 30s ease infinite;
 }
 
+@keyframes arcoIris {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Navbar */
+.navbar-container {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primaria);
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: var(--claro);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar-links li a:hover {
+    color: var(--primaria);
+}
+
+/* Seção inicial */
+.inicio {
+    margin: 70px auto 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.inicio h1 {
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(99, 115, 255);
+}
+
+/* Imagem com animação */
 .bruno-img {
     width: 200px;
     height: auto;
     border-radius: 50%;
     box-shadow: 0 4px 8px var(--vidro);
     animation: moverUpDown 3s ease-in-out infinite;
-    margin-top: 40px;
-    margin-bottom: 1%;
-
+    margin: 0 0 40px 0;
 }
 
 @keyframes moverUpDown {
-    0% {
-        transform: translateY(0); /* Começa na posição original */
+    0%, 100% {
+        transform: translateY(0);
     }
-
     50% {
-        transform: translateY(-20px);/* Move para cima 20px no meio da animação */
-    }
-
-    100% {
-        transform: translateY(0);/* Volta para a posição original no final da animação */
+        transform: translateY(-20px);
     }
 }
 
-.inicio {
-    display: flex; /* Usando Flexbox para organizar os elementos dentro da div */
-    flex-direction: column; /* Organizando os itens na vertical (coluna) */
-    align-items: center; /* Alinhando os itens no centro horizontalmente */
-    text-align: center; /* Centralizando o texto dentro dos itens */
-    margin-bottom: 50px;
-    padding: 10px; /* Adicionando um espaço interno (padding) para separar o conteúdo do contorno */
-    margin-left: auto; /* Margem automática nas laterais para centralizar a div horizontalmente */
-    margin-right: auto; /* Margem automática nas laterais para centralizar a div horizontalmente */
-}
-
+/* Sobre mim */
 .sobre-mim {
-    display: flex;              /* Ativa o Flexbox */
-    flex-direction: column;     /* Alinha os filhos em coluna */
-    align-items: center;        /* Centraliza horizontalmente */
-    text-align: center;         /* Centraliza o texto */
-    max-width: 700px;           /* Limita a largura para melhor leitura */
-    margin: 0 auto 30px auto;   /* Centraliza horizontalmente e dá margem inferior */
-    padding: 20px;              /* Espaço interno */
-    background-color: var(--maisescuro);  /* Cor de fundo suave (opcional) */
-    border-radius: 20px;         /* Bordas arredondadas (opcional) */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra leve (opcional) */
-     transition: box-shadow 0.3s ease;
+    max-width: 800px;
+    margin: 50px auto 50px auto;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: var(--maisescuro);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.sobre-mim:hover {
+    box-shadow: 0 0 30px var(--secundaria);
+    transition: box-shadow 0.3s ease;
 }
 
 .sobre-mim h2 {
     color: var(--primaria);
-    margin-bottom: 10px;        /* Espaçamento entre o título e o parágrafo */
+    margin-bottom: 10px;
 }
 
 .sobre-mim p {
-    margin: 0;                  /* Remove espaçamento inferior do parágrafo */
-    line-height: 1.4;           /* Altura da linha para melhor leitura */
-}
-.sobre-mim:hover {
-    box-shadow: 0 0 30px var(--secundaria);
+    margin: 0;
+    line-height: 1.4;
 }
 
-.lista-tec{
+/* Lista de tecnologias */
+.lista-tec {
+    list-style-type: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    list-style-type: none;
 }
 
+/* Imagens de tecnologia */
 .tecnologia-img {
-    width: 18px; /* Ajuste o tamanho conforme necessário */
-    height: 18px; /* Você pode também ajustar a altura se preferir */
+    width: 18px;
+    height: 18px;
 }
 
-.contato {
-    text-align: center;
-    padding: 60px 10px;
-    background-color: var(--maisescuro); /* Fundo escuro consistente */
-    border-radius: 20px;
+/* Seção idiomas */
+.section-idiomas { 
+    
+    max-width: 480px;
     margin: 40px auto;
-    width: 100%; /* Faz com que o elemento ocupe toda a largura da tela */
+    padding: 25px 30px;
+    background: rgba(108, 99, 255, 0.15);
+    border-radius: 18px;
+    box-shadow: 0 0 20px rgba(108, 99, 255, 0.3);
+    color: var(--claro);
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.section-idiomas h2 {
+   
+    font-size: 1.9rem;
+    margin-bottom: 25px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: var(--primaria);
+    text-shadow: 0 0 6px var(--primaria);
+}
+
+/* Item idioma */
+.idioma-item {
+    margin-bottom: 22px;
+    
+}
+
+.idioma-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.idioma-nome {
+    font-size: 1.2rem;
+    color: var(--claro);
+    
+}
+
+/* Barra de proficiência */
+.barra-proficiencia {
+    width: 100%;
+    height: 12px;
+    background: rgba(241, 141, 141, 0.15);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.25);
+}
+
+.barra-preenchida {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+    border-radius: 30px 0 0 30px;
+    transition: width 1.2s ease-in-out;
+    box-shadow: 0 0 8px var(--secundaria);
+}
+
+/* Tooltip de proficiência */
+.idioma-item:hover .idioma-nome::after {
+    content: attr(data-level);
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 0.85rem;
+    color: var(--secundaria);
+    font-weight: 700;
+}
+
+/* Responsividade */
+@media (max-width: 500px) {
+    .section-idiomas {
+        max-width: 90%;
+        padding: 20px;
+    }
+}
+
+/* Projetos */
+.projetos {
+    background-color: #04070f;
+    margin: 100px auto 0 auto;
+    margin-bottom: px;
+    padding: 2px 20px;
+    min-height: 0px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    transition: box-shadow 0.3s ease;
+    width: 500px;   
+    height: 500px;
+}
+
+.projetos:hover {
+    box-shadow: 0 0 30px var(--secundaria);
+    transition: box-shadow 0.3s ease;
+}
+
+.projetos h2 {
+    background-color: var(--maisescuro);
+    color: var(--primaria);
+    padding: 10px;
+    border-radius: 30px;
+    line-height: 3.0;
+    margin: -2px 0 10px 0;
+}
+
+.projetos h2 i {
+    color: inherit;
+    margin-right: 3px;
+}
+.btn{
+    display: inline-block;
+    margin-top: 20px;
+    background: var(--primaria);
+    color: var(--claro);
+    font-weight: 700;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 0 10px var(--primaria);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.carousel-caption{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Contato */
+.contato {
+    width: 100%;
+    max-width: 60000px;
+    margin: 0px auto;
+    padding: 0 10px;
+    background-color: var(--maisescuro);
+    text-align: center;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s ease;
-    position: relative; /* Fixa o elemento na parte inferior da tela se necessário */
-    bottom: 0;
+    position: relative;
+    bottom: -150px;
+    padding: 50px;
+ 
 }
 
 .contato:hover {
     box-shadow: 0 0 30px var(--secundaria);
+     transition: box-shadow 0.3s ease;
 }
 
 .contato h2 {
-    font-size: 32px;
+    font-size: 25px;
     font-weight: bold;
-    margin-bottom: 30px; /* Aumenta o espaçamento entre o título e os ícones */
+    margin: 5px 0 20px 0;
     color: var(--primaria);
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .contato a {
-    margin: 0 15px;
-    font-size: 36px;
+    margin: 0 15px 50px 15px;
+    font-size: 30px;
     color: var(--claro);
-    transition: color 0.3s, transform 0.3s ease;
     text-decoration: none;
     display: inline-block;
     position: relative;
+    transition: color 0.3s, transform 0.3s ease;
 }
 
 .contato a i {
@@ -142,5 +337,36 @@ body {
 }
 
 .contato a:hover i {
-    transform: scale(1.3); /* Aumenta o tamanho do ícone em 20% */
+    transform: scale(1.3);
+}
+
+/* Botão para baixar currículo */
+.btn-cv {
+    display: inline-block;
+    margin-top: 20px;
+    background: var(--primaria);
+    color: var(--claro);
+    font-weight: 700;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 0 10px var(--primaria);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-cv:hover {
+    background: var(--secundaria);
+    box-shadow: 0 0 15px var(--secundaria);
+}
+
+/* Animação aparecer */
+.aparecer {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.aparecer.visivel {
+    opacity: 1;
+    transform: translateY(0);
 }

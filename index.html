@@ -2,60 +2,169 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <title>Portifólio</title>
 </head>
 
 <body>
-    <!--<span class="bem-vindo">Bem-vindo ao meu portifólio</span> -->
-    <div class="inicio">
-        <img class="bruno-img" src="./img/Bruno.png" alt="">
-        <h1>Bruno Nitsche</h1>
-        <p>Dev Júnior, com foco em Full Stack</p>
-    </div>
 
-    <div class="sobre-mim">
-        <h2>- Sobre mim -</h2>
-        <p>Olá, meu nome é Bruno e estou cursando o 4º periodo da faculdade de Sistemas de informação.<br>
-            Sou uma pessoa que gosta de resolver problemas. Me encontrei na área de desenvolvimento
-            Full Stack, mexendo tanto na parte visual quanto na estrutura por trás dos projetos.</p>
-            <br>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo"></div>
+            <ul class="navbar-links">
+                <li><a href="#inicio"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="#sobre"><i class="fas fa-user"></i> Sobre</a></li>
+                <li><a href="#projetos"><i class="fa-solid fa-laptop-code"></i> Projetos</a></li>
+                <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
+            </ul>
         </div>
-            <div class="sobre-mim">
-        <h2>- Tecnologias Conhecidas -</h2>
-        <ul class="lista-tec">
-            <li><img class="tecnologia-img" src= "https://img.icons8.com/?size=100&id=12592&format=png&color=FFFFFF" alt="">  Python</li>
-            <li><img class="tecnologia-img" src="https://img.icons8.com/?size=100&id=55199&format=png&color=FFFFFF">  C++</li>
-            <li><img class="tecnologia-img" src="https://img.icons8.com/?size=100&id=39854&format=png&color=FFFFFF">  JavaScript </li>
-            <li><img class="tecnologia-img" src="https://img.icons8.com/?size=100&id=23028&format=png&color=FFFFFF">  HTML</li>
-            <li><img class="tecnologia-img" src="https://img.icons8.com/?size=100&id=38272&format=png&color=FFFFFF">  CSS</li>
-        </ul>    
-        </div>   
+    </nav>
 
-       <div class="contato">
-  <h2>Contato</h2>
-  <div>
-    <a href="https://github.com/Br4nio" target="_blank">
-      <i class="fa-brands fa-github"></i>
-    </a>
-    <a href="https://discord.com/users/seuID" target="_blank">
-      <i class="fa-brands fa-discord"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/seuPerfil" target="_blank">
-      <i class="fa-brands fa-linkedin"></i>
-    </a>
-    <a href="https://wa.me/+5534999026668" target="_blank">
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
+    <section id="inicio">
+        <div class="inicio">
+            <img class="bruno-img aparecer" src="./img/Bruno.png" alt="Foto inicial" />
+            <section class="inicio-texto">
+                <h1>Bruno Nitsche</h1>
+                <p>Dev Júnior, com foco em Full Stack</p>
+                <a href="./curriculo/Curriculo.docx" download class="btn-cv btn">📄 Baixar Currículo</a>
+            </section>
+        </div>
+    </section>
+ 
+    <section id="sobre">
+        <div class="sobre-mim aparecer">
+            <h2>- Sobre mim -</h2>
+            <p>
+                Olá, meu nome é Bruno e estou cursando o 4º periodo da faculdade de Sistemas de informação.<br />
+                Sou uma pessoa que gosta de resolver problemas. <br/>
+                Me encontrei na área de desenvolvimento Full Stack, mexendo tanto na parte visual quanto na estrutura por trás dos projetos.
+            </p>
+            <br />
+        </div>
+        <div class="sobre-mim aparecer">
+            <h2>- Tecnologias Conhecidas -</h2>
+            <ul class="lista-tec">
+                <li><img class="tecnologia-img" src="https://img.icons8.com/?size=100&id=12592&format=png&color=FFFFFF" alt="" /> Python</li>
+                <li><img class="tecnologia-img" src="https://img.icons8.com/?size=100&id=55199&format=png&color=FFFFFF" /> C++</li>
+                <li><img class="tecnologia-img" src="https://img.icons8.com/?size=100&id=39854&format=png&color=FFFFFF" /> JavaScript</li>
+                <li><img class="tecnologia-img" src="https://img.icons8.com/?size=100&id=23028&format=png&color=FFFFFF" /> HTML</li>
+                <li><img class="tecnologia-img" src="https://img.icons8.com/?size=100&id=38272&format=png&color=FFFFFF" /> CSS</li>
+            </ul>
+        </div>
+    </section>
+    
+<section class="section-idiomas aparecer">
+  <h2>Idiomas 🌐</h2>
+  <div class="idioma-item">
+    <div class="idioma-info">
+      <span class="idioma-nome">Português (Nativo)</span>
+    </div>
+    <div class="barra-proficiencia">
+      <div class="barra-preenchida" style="width: 100%;"></div>
+    </div>
   </div>
-</div>
+  <div class="idioma-item">
+    <div class="idioma-info">
+      <span class="idioma-nome">Inglês</span>
+    </div>
+    <div class="barra-proficiencia">
+      <div class="barra-preenchida" style="width: 75%;"></div>
+    </div>
+  </div>
+  <div class="idioma-item">
+    <div class="idioma-info">
+      <span class="idioma-nome">Espanhol</span>
+    </div>
+    <div class="barra-proficiencia">
+      <div class="barra-preenchida" style="width: 50%;"></div>
+    </div>
+  </div>
+</section>
 
 
-     <script src="script.js"></script>
+  <section id="projetos">
+  <div class="projetos aparecer">
+    <h2><i class="fas fa-folder-open"></i> - Projetos -</h2>
+    <div id="carouselProjetos" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <img src="https://www.hashtagtreinamentos.com/wp-content/uploads/2024/05/Projetos-em-HTML-e-CSS-para-Iniciantes-4.png.webp" class="d-block w-100" alt="Projeto 1">
+          <div class="carousel-caption d-block bg-dark bg-opacity-50 rounded p-2">
+            <h5>Pagina de login</h5>
+            <p>Descrição do projeto 1.</p>
+            <a href="https://github.com" target="_blank" class="btn btn-primary btn-sm">Ver projeto</a>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="https://guiaviajarmelhor.com.br/cl_resize/JmZU-gwKed1cQc349qA8-vkQ2Wia-Tq_3F25UQfEwsE/rs:fill:500:0/g:ce/q:70/aHR0cHM6Ly9ndWlhdmlhamFybWVsaG9yLmNvbS5ici93cC1jb250ZW50L3VwbG9hZHMvMjAxOS8wMy9TaXRlcy1kZS12aWFnZW0tR3VpYS1WaWFqYXItTWVsaG9yLTEwMjR4NTMzLmpwZw" class="d-block w-100" alt="Projeto 2">
+          <div class="carousel-caption d-block bg-dark bg-opacity-50 rounded p-2">
+            <h5>Página de Viagen</h5>
+            <p>Descrição do projeto 2.</p>
+            <a href="https://github.com" target="_blank" class="btn btn-primary btn-sm">Ver projeto</a>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="https://umdesenvolvedoriniciante.com/wp-content/uploads/2022/08/landing-page-projetos-html-e-css.png" class="d-block w-100" alt="Projeto 3">
+          <div class="carousel-caption d-block bg-dark bg-opacity-50 rounded p-2">
+            <h5>landing-page</h5>
+            <p>Descrição do projeto 3.</p>
+            <a href="https://github.com" target="_blank" class="btn btn-primary btn-sm">Ver projeto</a>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjetos" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselProjetos" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+  
+    <footer>
+        <section id="contato">
+            <div class="contato aparecer">
+                <h2>Contato</h2>
+                <div class="icones-contato">
+                    <a href="https://github.com/Br4nio" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://discord.com/users/bruno_nitsche" target="_blank">
+                        <i class="fa-brands fa-discord"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/bruno-corrêa90o" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://wa.me/+5534999026668" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+
+                
+            </div>
+            
+        </section>
+    </footer>
+
+    <!-- Link para o arquivo JavaScript externo -->
+    <script src="script.js"></script>
+
+    <!-- Bootstrap JS Bundle (inclui Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
